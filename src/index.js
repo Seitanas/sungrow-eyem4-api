@@ -40,7 +40,7 @@ class Client extends EventEmitter {
 
             // parse response
             const json = JSON.parse(data.toString());
-            const serviceName = json?.result_data?.service;
+            const serviceName = json.result_data.service;
 
             // find service callback
             const callback = this.serviceCallbacks[serviceName];
@@ -159,7 +159,7 @@ class Client extends EventEmitter {
         });
 
         // update token from response
-        this.token = response?.token;
+        this.token = response.token;
 
         return true;
 
